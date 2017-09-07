@@ -1,11 +1,3 @@
 # CS480Niday
 
-Contents: Implementation of both rotating (about its own axis) and revolving (about the origin) cube, making use of shader loader to read shader information from file
-
-Compilation: from build directory, type "make".
-
-Running the program (Also from the build directory):
- $ ./Tutorial -f <fragment shader file path> -v <vertex shader file path>
- 
- In this case, the command line arguments should be as follows:
- ./Tutorial -f shaders/fragmentShader.frag -f shaders/vertexShader.vert
+Thursday, September 6, 2017 -- Added completed Project 1 to repository in PA1 folder
