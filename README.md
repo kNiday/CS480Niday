@@ -1,6 +1,6 @@
 # CS480Niday
 
-Contents: Implementation of both rotating (about its own axis) and revolving (about the origin) cube, making use of shader loader to 
+Contents: Implementation of both rotating (about its own axis) and revolving (about the origin) cube, making use of shader loader to read shader information from file
 
 Compilation: from build directory, type "make".
 
