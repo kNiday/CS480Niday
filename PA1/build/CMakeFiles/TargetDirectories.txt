@@ -1,0 +1,4 @@
+/home/kate/Documents/computer-graphics-master/PA1/build/CMakeFiles/edit_cache.dir
+/home/kate/Documents/computer-graphics-master/PA1/build/CMakeFiles/Tutorial_SUCCESSFUL.dir
+/home/kate/Documents/computer-graphics-master/PA1/build/CMakeFiles/rebuild_cache.dir
+/home/kate/Documents/computer-graphics-master/PA1/build/CMakeFiles/Tutorial.dir
