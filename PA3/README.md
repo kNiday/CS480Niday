@@ -20,6 +20,6 @@ cd build
 Note that the fragment and vertex shader file names can be switched as long as they are preceded by the -f and -v arguments, respectively, and different files or file paths could be used if necessary.
 
 #### Keyboard Inputs
-Press SPACEBAR to pause the system completely. This does not toggle; a different key must be pressed to get the system moving again.
+Press SPACEBAR to pause the planet completely. This does not toggle; a different key must be pressed to get the system moving again.
 
-Press the RIGHT AND LEFT ARROW KEYS to change the direction of the system. The RIGHT ARROW KEY moves the system in the initial direction (i.e. counterclockwise) while the LEFT ARROW KEY moves it in the opposite direction. (i.e. clockwise).
+Press the RIGHT AND LEFT ARROW KEYS to change the direction of the planet. The RIGHT ARROW KEY moves the planet in the initial direction (i.e. counterclockwise) while the LEFT ARROW KEY moves it in the opposite direction. (i.e. clockwise).
