@@ -1,0 +1,4 @@
+/home/kate/Documents/CS480Niday/PA3/build/CMakeFiles/edit_cache.dir
+/home/kate/Documents/CS480Niday/PA3/build/CMakeFiles/Tutorial_SUCCESSFUL.dir
+/home/kate/Documents/CS480Niday/PA3/build/CMakeFiles/rebuild_cache.dir
+/home/kate/Documents/CS480Niday/PA3/build/CMakeFiles/Tutorial.dir
