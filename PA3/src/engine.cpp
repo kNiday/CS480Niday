@@ -94,17 +94,28 @@ void Engine::Keyboard()
     {
       m_running = false;
     }
-    if (m_event.key.keysym.sym == SDLK_LEFT)
+    if (m_event.key.keysym.sym == SDLK_LEFT || m_event.key.keysym.sym == SDLK_a)
     {
       direction = -1;
     }
-    if (m_event.key.keysym.sym == SDLK_RIGHT)
+    if (m_event.key.keysym.sym == SDLK_RIGHT || m_event.key.keysym.sym == SDLK_d)
     {
       direction = 1;
     }
     if (m_event.key.keysym.sym == SDLK_SPACE)
     {
       direction = 0;
+    }
+  }
+  else if (m_event.type == SDL_MOUSEBUTTONDOWN)
+  {
+    if (direction != 0)
+    {
+      direction = 0;
+    }
+    else
+    {
+      direction = 1;
     }
   }
 }
