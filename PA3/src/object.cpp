@@ -73,63 +73,13 @@ Object::Object()
   glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(unsigned int) * Indices.size(), &Indices[0], GL_STATIC_DRAW);
 }
 
-Object::Object(glm::mat4 parent)
-{  
-  Vertices = {
-    {{1.0f, -1.0f, -1.0f}, {0.0f, 0.0f, 0.0f}},
-    {{1.0f, -1.0f, 1.0f}, {1.0f, 0.0f, 0.0f}},
-    {{-1.0f, -1.0f, 1.0f}, {0.0f, 1.0f, 0.0f}},
-    {{-1.0f, -1.0f, -1.0f}, {0.0f, 0.0f, 1.0f}},
-    {{1.0f, 1.0f, -1.0f}, {1.0f, 1.0f, 0.0f}},
-    {{1.0f, 1.0f, 1.0f}, {1.0f, 0.0f, 1.0f}},
-    {{-1.0f, 1.0f, 1.0f}, {0.0f, 1.0f, 1.0f}},
-    {{-1.0f, 1.0f, -1.0f}, {1.0f, 1.0f, 1.0f}}
-  };
-
-  Indices = {
-    2, 3, 4,
-    8, 7, 6,
-    1, 5, 6,
-    2, 6, 7,
-    7, 8, 4,
-    1, 4, 8,
-    1, 2, 4,
-    5, 8, 6,
-    2, 1, 6,
-    3, 2, 7,
-    3, 7, 4,
-    5, 1, 8
-  };
-
-
-
-  // The index works at a 0th index
-  for(unsigned int i = 0; i < Indices.size(); i++)
-  {
-    Indices[i] = Indices[i] - 1;
-  }
-
-  angle = 0.0f;
-
-  glGenBuffers(1, &VB);
-  glBindBuffer(GL_ARRAY_BUFFER, VB);
-  glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * Vertices.size(), &Vertices[0], GL_STATIC_DRAW);
-
-  glGenBuffers(1, &IB);
-  glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IB);
-  glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(unsigned int) * Indices.size(), &Indices[0], GL_STATIC_DRAW);
-
-  parentModel = parent;
-}
-
-
 Object::~Object()
 {
   Vertices.clear();
   Indices.clear();
 }
 
-void Object::Update(unsigned int dt, int direction, bool isMoon)
+void Object::Update(unsigned int dt, int direction, bool isMoon, glm::mat4 parentModel)
 {
   if (!isMoon)
   {
@@ -147,20 +97,11 @@ void Object::Update(unsigned int dt, int direction, bool isMoon)
   }
   else
   {
+    angle += dt * M_PI/1000;
     model = parentModel;
-    if ( direction > 0 )
-    {
-      angle += dt * M_PI/1000;
-    }
-    if (direction < 0)
-    {
-      angle -= dt * M_PI/1000;
-    }
-    model = glm::scale(glm::mat4(1.0f), glm::vec3(0.75, 0.75, 0.75));
-    //model *= glm::rotate(glm::mat4(1.0f), (angle/3), glm::vec3(0.0, 1.0, 0.0));
-    //model *= glm::translate(glm::mat4(1.0f), glm::vec3(3.0, 0.0, 0.0));
-    model *= glm::rotate(glm::mat4(1.0f), (angle), glm::vec3(0.0, 2.0, 0.0));
-    model *= glm::translate(glm::mat4(1.0f), glm::vec3(4.0, 0.0, 0.0));
+    model *= glm::scale(glm::mat4(1.0f), glm::vec3(0.75, 0.75, 0.75));
+    model *= glm::rotate(glm::mat4(1.0f), (angle/3), glm::vec3(0.0, 1.0, 0.0));
+    model *= glm::translate(glm::mat4(1.0f), glm::vec3(3.0, 0.0, 0.0));
     model *= glm::rotate(glm::mat4(1.0f), (angle), glm::vec3(0.0, 2.0, 0.0));
   }
 }

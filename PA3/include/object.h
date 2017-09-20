@@ -8,16 +8,14 @@ class Object
 {
   public:
     Object();
-    Object(glm::mat4 parent);
     ~Object();
-    void Update(unsigned int dt, int direction, bool isMoon);
+    void Update(unsigned int dt, int direction, bool isMoon, glm::mat4 parentModel);
     void Render();
 
     glm::mat4 GetModel();
 
   private:
     glm::mat4 model;
-    glm::mat4 parentModel;
     std::vector<Vertex> Vertices;
     std::vector<unsigned int> Indices;
     GLuint VB;
